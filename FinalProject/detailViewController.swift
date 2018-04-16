@@ -10,10 +10,32 @@ import UIKit
 
 class detailViewController: UIViewController {
 
+
+    @IBOutlet var restaurantTextView: UITextView!
+    
+    @IBOutlet var imageView: UIImageView!
+   
+    var imagePass: String?
+    
+    var titlePass: String?
+    
+    var textViewPass: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        if let imageName = imagePass {
+            imageView.image = UIImage(named: imageName)
+        }
+        if let imageText = textViewPass{
+           restaurantTextView.text = imageText
+        }
+        
+        self.title = titlePass
+        
+        self.view.backgroundColor=UIColor.black
     }
 
     override func didReceiveMemoryWarning() {

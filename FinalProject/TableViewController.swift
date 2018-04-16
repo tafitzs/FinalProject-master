@@ -12,9 +12,13 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
  
     @IBOutlet var tableView: UITableView!
    
-    var haleiwaRestauyrantArray = ["Cholo's", "Stormy's", "Kono's", "Storto's", "Haleiwa Joe's", "Elephant Shack"]
+    var haleiwaRestaurantArray = ["Cholo's", "Stormy's", "Kono's", "Storto's", "Haleiwa Joe's", "Elephant Shack"]
     
     var restaurantImageData = [String]()
+    
+    var restaurantTitleData = [String]()
+    
+    var restaurantTextViewData = [String]()
     
     
     override func viewDidLoad() {
@@ -26,27 +30,36 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         
          self.navigationItem.title = "Haleiwa Eats"
         
-        let path = Bundle.main.path(forResource: "Eats List", ofType: "plist")
+        let path = Bundle.main.path(forResource: "eatsList", ofType: "plist")
         let dict = NSDictionary(contentsOfFile: path!)
         
-      restaurantImageData = dict!.object(forKey: "restaurantImages") as! [String]
-    
+      restaurantImageData = dict!.object(forKey:"restaurantImages") as! [String]
+
+        restaurantTitleData = dict!.object(forKey: "restaurantNames") as! [String]
+        
+        restaurantTextViewData = dict!.object(forKey: "restaurantDescriptions") as! [String]
+        
+       self.view.backgroundColor=UIColor.red
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+   
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+      return "My Favorite Restaurants in Haleiwa"
+    }
     
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return haleiwaRestauyrantArray.count
+    return haleiwaRestaurantArray.count
     
     }
 
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "cellReuseIdentifier")!
-    let text = haleiwaRestauyrantArray[indexPath.row]
+    let text = haleiwaRestaurantArray[indexPath.row]
     cell.textLabel?.text = text
     return cell
     
@@ -60,7 +73,11 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
         {
             let s1 = segue.destination as! detailViewController
             let imageIndex = tableView.indexPathForSelectedRow?.row
-            s1 .imagepass = restaurantImageData[imageIndex!]
+            s1.imagePass = restaurantImageData[imageIndex!]
+            s1.titlePass = restaurantTitleData[imageIndex!]
+            s1.textViewPass = restaurantTextViewData[imageIndex!]
+            
+            
         }
     }
     
