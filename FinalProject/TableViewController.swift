@@ -9,13 +9,18 @@
 import UIKit
 
 class TableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-  
-    //restauramnt image data
+ 
+    @IBOutlet var tableView: UITableView!
+   
+    var haleiwaRestauyrantArray = ["Cholo's", "Stormy's", "Kono's", "Storto's", "Haleiwa Joe's", "Elephant Shack"]
+    
     var restaurantImageData = [String]()
     
-    @IBOutlet var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
 
         // Do any additional setup after loading the view.
         
@@ -32,25 +37,31 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        func numberOfSections(in tableView: UITableViewCell) -> Int {
-            
-            return 1;
-            
-        }
-   }
-    
-   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -Int {
 
+    
+   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return haleiwaRestauyrantArray.count
+    
     }
 
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+    let cell = tableView.dequeueReusableCell(withIdentifier: "cellReuseIdentifier")!
+    let text = haleiwaRestauyrantArray[indexPath.row]
+    cell.textLabel?.text = text
+    return cell
+    
 }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        
-       tableView.deselectRow(at: indexPath as IndexPath, animated: true)
+        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        if segue.identifier == "mySegue"
+        {
+            let s1 = segue.destination as! detailViewController
+            let imageIndex = tableView.indexPathForSelectedRow?.row
+            s1 .imagepass = restaurantImageData[imageIndex!]
+        }
     }
     
     /*
