@@ -17,14 +17,23 @@
                     <view key="view" contentMode="scaleToFill" id="IMq-je-8P4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Bez-xy-qnb">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="PXd-Nk-Tbi"/>
                     </view>
                     <navigationItem key="navigationItem" id="jdU-HM-pmr"/>
+                    <connections>
+                        <outlet property="mapView" destination="Bez-xy-qnb" id="G8c-gs-zdS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="35X-UZ-GH0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1440" y="296"/>
+            <point key="canvasLocation" x="1440" y="295.77464788732397"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="hrY-4I-oN6">

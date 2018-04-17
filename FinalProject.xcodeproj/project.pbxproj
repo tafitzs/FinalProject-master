@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75C888122085C8700055750B /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C888112085C8700055750B /* Restaurant.swift */; };
 		7F9EE1FA2072CCA10099E2B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9EE1F92072CCA10099E2B6 /* AppDelegate.swift */; };
 		7F9EE1FC2072CCA10099E2B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9EE1FB2072CCA10099E2B6 /* ViewController.swift */; };
 		7F9EE1FF2072CCA10099E2B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F9EE1FD2072CCA10099E2B6 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		75C888112085C8700055750B /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		7F9EE1F62072CCA10099E2B6 /* FinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F9EE1F92072CCA10099E2B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F9EE1FB2072CCA10099E2B6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				7F9EE1FB2072CCA10099E2B6 /* ViewController.swift */,
 				7FC60E64207C17B900C9EFA9 /* eatsList.plist */,
 				7F9EE1FD2072CCA10099E2B6 /* Main.storyboard */,
+				75C888112085C8700055750B /* Restaurant.swift */,
 				7FC78A91208537C300C3A492 /* detailViewController.swift */,
 				7FC60E62207C16E300C9EFA9 /* TableViewController.swift */,
 				7F9EE2002072CCA10099E2B6 /* Assets.xcassets */,
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75C888122085C8700055750B /* Restaurant.swift in Sources */,
 				7F9EE1FC2072CCA10099E2B6 /* ViewController.swift in Sources */,
 				7FC60E63207C16E300C9EFA9 /* TableViewController.swift in Sources */,
 				7F9EE1FA2072CCA10099E2B6 /* AppDelegate.swift in Sources */,
